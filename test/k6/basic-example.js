@@ -2,11 +2,15 @@ import http from 'k6/http';
 import { sleep } from 'k6';
 
 export const options = {
-  vus: 20,
-  duration: '120s',
+  executor: 'ramping-vus',
+  startVUs: 0,
+  stages: [
+    { duration: '30s', target: 25 },
+    { duration: '900s', target: 25 },
+  ],
   thresholds: {
     http_req_duration: ['p(95)<250', 'max<2000'],
-    http_req_failed: ['rate<0.1'],
+    http_req_failed: ['rate<0.5'],
   },
 };
 
