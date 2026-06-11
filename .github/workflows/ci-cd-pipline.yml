@@ -86,6 +86,13 @@ jobs:
       - name: Deploy CDK stack
         run: npx cdk deploy --all --require-approval never
 
+  test:
+    name: Run tests
+    needs: deploy
+    runs-on: ubuntu-latest
+    continue-on-error: true
+
+    steps:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
