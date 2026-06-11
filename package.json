@@ -9,7 +9,8 @@
     "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
     "cdk": "cdk",
     "test": "jest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "bootstrap:db": "node scripts/bootstrap-db.js"
   },
   "devDependencies": {
     "aws-cdk": "^2.1033.0",
