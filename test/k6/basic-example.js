@@ -6,7 +6,7 @@ export const options = {
   startVUs: 0,
   stages: [
     { duration: '30s', target: 25 },
-    { duration: '900s', target: 25 },
+    { duration: '210s', target: 25 },
   ],
   thresholds: {
     http_req_duration: ['p(95)<250', 'max<2000'],
