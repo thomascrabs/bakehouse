@@ -86,5 +86,8 @@ jobs:
       - name: Deploy CDK stack
         run: npx cdk deploy --all --require-approval never
 
-      - name: Run tests
+      - name: Install playwright deps
+        run: npx playwright install    
+
+      - name: Run functional tests
         run: npm run test:e2e
