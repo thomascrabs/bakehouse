@@ -22,7 +22,7 @@ Timeout:  5000ms
 Call log:
   - Expect "toHaveText" with timeout 5000ms
   - waiting for locator('form p')
-    9 × locator resolved to <p class="_error_10074_83">Failed to create product</p>
+    3 × locator resolved to <p class="_error_10074_83">Failed to create product</p>
       - unexpected value "Failed to create product"
 
 ```
