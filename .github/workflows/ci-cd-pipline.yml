@@ -23,6 +23,9 @@ jobs:
     name: Build, Test, and Synthesize
     runs-on: ubuntu-latest
 
+    environment:
+      name: production
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -42,7 +45,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: eu-west-2
 
       - name: Check AWS identity
         run: aws sts get-caller-identity
@@ -75,7 +78,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-region: eu-west-2
 
       - name: Check AWS identity
         run: aws sts get-caller-identity
