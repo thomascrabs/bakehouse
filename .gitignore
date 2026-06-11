@@ -1,0 +1,141 @@
+# =====================================================
+# NODE / REACT PROJECTS
+# =====================================================
+
+# Dependencies
+**/node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Next.js & Vite builds
+.next/
+out/
+.vite/
+
+# Testing coverage
+coverage/
+
+# Cache
+.cache/
+.eslintcache
+.stylelintcache
+vite-cache/
+*.tsbuildinfo
+
+# =====================================================
+# PYTHON PROJECTS
+# =====================================================
+
+# Byte-compiled / Optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / Coverage reports
+.coverage
+.coverage.*
+.cache
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.hypothesis/
+.tox/
+.mypy_cache/
+
+# Django / Flask stuff
+*.log
+*.pot
+*.mo
+db.sqlite3
+instance/
+.webassets-cache
+*.pyc
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# =====================================================
+# IDE & OS SPECIFIC FILES
+# =====================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# JetBrains IDEs
+.idea/
+
+# VSCode
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Other editors
+*.swp
+*.swo
+*~
+
+# =====================================================
+# MISCELLANEOUS
+# =====================================================
+
+# Local SQLite databases
+*.db
+
+# Environment dumps
+*.envrc
+*.env.*
+
+# Serverless / Cloud Functions
+.serverless/
+.functions/
+
+# Other package managers
+.pnp/
+.pnp.js
+.pnpm-store/
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
