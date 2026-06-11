@@ -85,3 +85,6 @@ jobs:
 
       - name: Deploy CDK stack
         run: npx cdk deploy --all --require-approval never
+
+      - name: Run tests
+        run: npm run test:e2e
