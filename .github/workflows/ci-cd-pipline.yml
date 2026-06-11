@@ -16,7 +16,7 @@ permissions:
 env:
   NODE_OPTIONS: --max-old-space-size=4096
   AWS_REGION: eu-west-2
-  BAKEHOUSE_STACK_NAME: thomas-bakehouse
+  BAKEHOUSE_STACK_NAME: bakehouse-${{ github.actor }}
 
 jobs:
   ci:
@@ -35,8 +35,17 @@ jobs:
       - name: Install project dependencies
         run: ./install.sh
 
-   ##   - name: Run tests
-   ##     run: npm test
+   #   - name: Run tests
+   #     run: npm test
+
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Check AWS identity
+        run: aws sts get-caller-identity
 
       - name: Synthesize CDK application
         run: npx cdk synth
@@ -66,25 +75,10 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
-          role-session-name: ${{ needs.setup.outputs.session-name }}
           aws-region: ${{ env.AWS_REGION }}
-
-      - name: Verify OIDC credentials
-        run: |
-          echo "Verifying AWS credentials..."
-          IDENTITY=$(aws sts get-caller-identity)
-          echo "Assumed role:"
-          echo "${IDENTITY}" | jq '.'
-
-          # Extract role session name from assumed identity
-          ROLE_SESSION=$(echo "${IDENTITY}" | jq -r '.Arn' | grep -oP '(?<=/)[^/]+$')
-          echo "Current session: ${ROLE_SESSION}"
 
       - name: Check AWS identity
         run: aws sts get-caller-identity
-
-      - name: Synthesize CDK application
-        run: npx cdk synth
 
       - name: Deploy CDK stack
         run: npx cdk deploy --all --require-approval never
