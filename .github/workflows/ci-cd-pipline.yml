@@ -90,7 +90,6 @@ jobs:
     name: Run tests
     needs: deploy
     runs-on: ubuntu-latest
-    continue-on-error: true
 
     steps:
       - name: Checkout repository
@@ -108,6 +107,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
+        continue-on-error: true
         run: npm run test:e2e
 
       - name: Upload Playwright report
