@@ -1,0 +1,5288 @@
+{
+  "/thomas-bakehouse-stack": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:error",
+      "data": "Could not find any VPCs matching {\"account\":\"024560517762\",\"region\":\"eu-west-2\",\"filter\":{\"tag:Name\":\"CTASharedVPC-vpc\"},\"returnAsymmetricSubnets\":true,\"lookupRoleArn\":\"arn:aws:iam::024560517762:role/cdk-hnb659fds-lookup-role-024560517762-eu-west-2\"}",
+      "trace": [
+        "Annotations.addMessage (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:3441)",
+        "Annotations.addError (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2673)",
+        "Annotations._addTrackableError (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2772)",
+        "ContextProvider.getValue (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/context-provider.js:2:1886)",
+        "Vpc2.fromLookup (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/aws-ec2/lib/vpc.js:1:14954)",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:87:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30:1",
+        "ModuleJob.run (node:internal/modules/esm/module_job:413:25)",
+        "async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:654:26)",
+        "async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+      ]
+    },
+    {
+      "type": "aws:cdk:error-code",
+      "data": "ContextProviderError"
+    },
+    {
+      "type": "aws:cdk:error",
+      "data": "Found zones: [] for dns:cta-training.academy, privateZone:undefined, vpcId:undefined, but wanted exactly 1 zone",
+      "trace": [
+        "Annotations.addMessage (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:3441)",
+        "Annotations.addError (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2673)",
+        "Annotations._addTrackableError (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/annotations.js:1:2772)",
+        "ContextProvider.getValue (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/core/lib/context-provider.js:2:1886)",
+        "HostedZone2.fromLookup (/home/thomas/workspace/temp/bakehouse/node_modules/aws-cdk-lib/aws-route53/lib/hosted-zone.js:1:8307)",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:550:37)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30:1",
+        "ModuleJob.run (node:internal/modules/esm/module_job:413:25)",
+        "async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:654:26)",
+        "async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/postgres-parameter-group": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "name": "*",
+        "engine": {
+          "engineType": "*",
+          "engineVersion": {
+            "fullVersion": "*",
+            "majorVersion": "*"
+          },
+          "parameterGroupFamily": "*",
+          "engineFamily": "*",
+          "defaultUsername": "*"
+        },
+        "description": "*",
+        "removalPolicy": "destroy",
+        "parameters": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "bindToCluster": [
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "engine": {
+          "engineType": "*",
+          "engineVersion": {
+            "fullVersion": "*",
+            "majorVersion": "*"
+          },
+          "parameterGroupFamily": "*",
+          "singleUserRotationApplication": "*",
+          "engineFamily": "*",
+          "defaultUsername": "*",
+          "supportedLogTypes": "*"
+        },
+        "parameterGroup": "*",
+        "defaultDatabaseName": "*",
+        "vpc": "*",
+        "vpcSubnets": {
+          "subnetType": "Isolated"
+        },
+        "writer": "*",
+        "serverlessV2MinCapacity": "*",
+        "serverlessV2MaxCapacity": "*",
+        "enableDataApi": true,
+        "removalPolicy": "destroy"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/users-table": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "tableName": "*",
+        "partitionKey": {
+          "name": "*",
+          "type": "S"
+        },
+        "billingMode": "PAY_PER_REQUEST",
+        "removalPolicy": "destroy"
+      }
+    },
+    {
+      "type": "aws:cdk:hasPhysicalName",
+      "data": {
+        "Ref": "userstable4FB8B1A2"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/favourites-table": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "tableName": "*",
+        "partitionKey": {
+          "name": "*",
+          "type": "S"
+        },
+        "sortKey": {
+          "name": "*",
+          "type": "S"
+        },
+        "billingMode": "PAY_PER_REQUEST",
+        "removalPolicy": "destroy"
+      }
+    },
+    {
+      "type": "aws:cdk:hasPhysicalName",
+      "data": {
+        "Ref": "favouritestableC14E1F73"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "bucketName": "*",
+        "removalPolicy": "destroy",
+        "autoDeleteObjects": true,
+        "publicReadAccess": true,
+        "encryption": "S3_MANAGED",
+        "blockPublicAccess": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+    {
+      "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+      "data": true
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "bucketName": "*",
+        "removalPolicy": "destroy",
+        "autoDeleteObjects": true,
+        "publicReadAccess": false,
+        "encryption": "S3_MANAGED",
+        "websiteIndexDocument": "*",
+        "blockPublicAccess": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/redirects-function": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "code": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "handler": "*",
+        "code": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "functionName": "*",
+        "runtime": "*",
+        "code": "*",
+        "handler": "*",
+        "environment": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "restApiName": "*",
+        "description": "*",
+        "deploy": true,
+        "deployOptions": {
+          "stageName": "*"
+        },
+        "defaultCorsPreflightOptions": {
+          "allowHeaders": "*",
+          "allowMethods": "*",
+          "allowOrigins": "*",
+          "allowCredentials": true
+        }
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-distribution": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "defaultBehavior": {
+          "origin": "*",
+          "viewerProtocolPolicy": "redirect-to-https",
+          "originRequestPolicy": "*",
+          "functionAssociations": [
+            {
+              "eventType": "viewer-request",
+              "function": "*"
+            }
+          ]
+        },
+        "additionalBehaviors": "*",
+        "errorResponses": [
+          {
+            "httpStatus": "*",
+            "responseHttpStatus": "*",
+            "responsePagePath": "*",
+            "ttl": "*"
+          },
+          {
+            "httpStatus": "*",
+            "responseHttpStatus": "*",
+            "responsePagePath": "*",
+            "ttl": "*"
+          }
+        ],
+        "defaultRootObject": "*",
+        "priceClass": "PriceClass_100",
+        "domainNames": "*",
+        "certificate": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addBehavior": [
+          "*",
+          {},
+          {
+            "viewerProtocolPolicy": "redirect-to-https",
+            "allowedMethods": "*",
+            "cachePolicy": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "layers": [
+          "*"
+        ],
+        "environment": "*",
+        "timeout": "*",
+        "role": "*",
+        "memorySize": "*",
+        "ephemeralStorageSize": "*",
+        "vpc": "*",
+        "vpcSubnets": "*",
+        "securityGroups": "*",
+        "filesystem": "*",
+        "logGroup": "*",
+        "code": "*",
+        "handler": "*",
+        "runtime": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addEnvironment": [
+          "*",
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addLayers": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-singleton",
+      "data": true
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+      "data": 2
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-singleton",
+      "data": true
+    },
+    {
+      "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+      "data": 2
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-distribution": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "defaultBehavior": {
+          "origin": "*",
+          "viewerProtocolPolicy": "redirect-to-https",
+          "functionAssociations": [
+            {
+              "eventType": "viewer-request",
+              "function": "*"
+            }
+          ]
+        },
+        "priceClass": "PriceClass_100",
+        "domainNames": "*",
+        "certificate": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-record": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "zone": "*",
+        "recordName": "*",
+        "domainName": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "zone": "*",
+        "recordName": "*",
+        "domainName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-record": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "zone": "*",
+        "recordName": "*",
+        "domainName": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "zone": "*",
+        "recordName": "*",
+        "domainName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/ClientUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ClientUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:577:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/ProductCardsSamplePdfUrl": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "ProductCardsSamplePdfUrl"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:581:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/PrettyApiUrlHealthcheck": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PrettyApiUrlHealthcheck"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:585:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/PostUsersLambdaName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "PostUsersLambdaName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:590:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/LoginLambdaName": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "LoginLambdaName"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:594:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/PublicSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/PublicSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/PrivateSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/PrivateSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/IsolatedSubnet1": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/sharedVpc/IsolatedSubnet2": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/postgres-parameter-group/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postgresparametergroup94AD1CA4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Subnets": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "description": "*",
+        "vpc": "*",
+        "vpcSubnets": {
+          "subnetType": "Isolated"
+        },
+        "removalPolicy": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/SecurityGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "description": "*",
+        "vpc": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Secret": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "encryptionKey": "*",
+        "secretName": "*",
+        "replicaRegions": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "username": "*",
+        "secretName": "*",
+        "encryptionKey": "*",
+        "excludeCharacters": "*",
+        "replaceOnPasswordCriteriaChanges": "*",
+        "replicaRegions": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdscluster9D572005"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/writer": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/users-table/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "userstable4FB8B1A2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Table2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:150:24)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/users-table/ScalingRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/favourites-table/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "favouritestableC14E1F73"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Table2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:165:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/favourites-table/ScalingRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcards12A2A5C2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:176:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards/Policy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "bucket": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards/AutoDeleteObjectsCustomResource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientbucketE00B4B19"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:190:26)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketAutoDeleteObjects"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket/Policy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "bucket": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket/AutoDeleteObjectsCustomResource": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/redirects-function/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "redirectsfunctionCD45C9E2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:241:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "badlambdaB8FB1CC8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:278:23)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "healthchecklambdaF43DF6B4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:287:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productslistlambda7F4142F7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:296:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postproductslambda894EFC32"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:309:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getcustomerslambdaC9A0CCCC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:318:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postcustomerslambdaAE78455F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:326:33)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getorderslambdaDB82837A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:335:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postorderslambdaECD46C86"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:343:30)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postuserslambda8EDE6387"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:354:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "loginlambda2CB05E51"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:365:25)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "bootstraplambda31205084"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:376:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigw88C2FCEE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:403:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Deployment": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "description": "*",
+        "api": "*",
+        "retainDeployments": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToLogicalId": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/DeploymentStage.api": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "deployment": "*",
+        "stageName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Endpoint": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwEndpoint65DB08D1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:403:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/apigw-rate-limits": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "name": "*",
+        "throttle": {
+          "rateLimit": "*",
+          "burstLimit": "*"
+        }
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-distribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientdistributionF3529F22"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:459:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/AwsCliLayer": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {}
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/CustomResourceHandler": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "uuid": "*",
+        "layers": [
+          "*"
+        ],
+        "environment": "*",
+        "lambdaPurpose": "*",
+        "timeout": "*",
+        "role": "*",
+        "memorySize": "*",
+        "ephemeralStorageSize": "*",
+        "vpc": "*",
+        "vpcSubnets": "*",
+        "securityGroups": "*",
+        "filesystem": "*",
+        "logGroup": "*",
+        "code": "*",
+        "handler": "*",
+        "runtime": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMetadata": [
+          "*",
+          true
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMetadata": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/CustomResource-256MiB": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/ServiceRole": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "managedPolicies": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachInlinePolicy": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addToPrincipalPolicy": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB5F7BD223"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:501:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/LogGroup": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "logGroupName": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-distribution/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsdistributionA5871CF2"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Distribution2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:514:38)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/AwsCliLayer": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {}
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/CustomResourceHandler": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "uuid": "*",
+        "layers": [
+          "*"
+        ],
+        "environment": "*",
+        "lambdaPurpose": "*",
+        "timeout": "*",
+        "role": "*",
+        "memorySize": "*",
+        "ephemeralStorageSize": "*",
+        "vpc": "*",
+        "vpcSubnets": "*",
+        "securityGroups": "*",
+        "filesystem": "*",
+        "logGroup": "*",
+        "code": "*",
+        "handler": "*",
+        "runtime": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMetadata": [
+          "*",
+          true
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMetadata": [
+          "*",
+          "*"
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/CustomResource-256MiB": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-record/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsrecordDA979CAF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CnameRecord2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:554:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-record/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientrecord6A4E0265"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new CnameRecord2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:560:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Subnets/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdsclusterSubnets2080BBBF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/SecurityGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdsclusterSecurityGroupE79E3C86"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Secret/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdsclusterSecret5F22C2CE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Secret/Attachment": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "secret": "*",
+        "target": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/writer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdsclusterwriter2E7008FD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsPolicy1087FDF8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsAutoDeleteObjectsCustomResourceB8F70A2C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket/Policy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientbucketPolicy6A6BEA8D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Bucket2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:190:26)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    },
+    {
+      "type": "aws:cdk:analytics:mixin",
+      "data": {
+        "mixin": "aws-cdk-lib.aws_s3.mixins.BucketPolicyStatements"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-bucket/AutoDeleteObjectsCustomResource/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientbucketAutoDeleteObjectsCustomResourceA9FDCCEF"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "badlambdaServiceRole06021596"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:278:23)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/bad-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "badlambdaLogGroupFE871B2D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:278:23)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "healthchecklambdaServiceRole4A3DAD8C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:287:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/health-check-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "healthchecklambdaLogGroup3A7B8C79"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:287:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productslistlambdaServiceRole9F6EE2CC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:296:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productslistlambdaLogGroup78823064"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:296:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postproductslambdaServiceRoleCCD20209"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:309:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postproductslambdaLogGroupA3DE4D2E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:309:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getcustomerslambdaServiceRoleF12D5238"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:318:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getcustomerslambdaLogGroup54565B8C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:318:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postcustomerslambdaServiceRole8DA48EA1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:326:33)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postcustomerslambdaLogGroup27233617"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:326:33)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getorderslambdaServiceRole1C7158D9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:335:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getorderslambdaLogGroup0E7CACD0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:335:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postorderslambdaServiceRoleA1D8A14E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:343:30)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postorderslambdaLogGroup6555A5C4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:343:30)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postuserslambdaServiceRoleE2680C17"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:354:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postuserslambdaLogGroupD4922F7B"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:354:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "loginlambdaServiceRole3BF06FDA"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:365:25)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "loginlambdaLogGroupF0AEFD26"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:365:25)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "bootstraplambdaServiceRole5CCC4D30"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:376:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "bootstraplambdaLogGroupCA79BF97"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Function2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:376:29)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Deployment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwDeployment30AED7097ed100ae19ba3ba8ac1bd7884a5913c7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:403:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/DeploymentStage.api/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwDeploymentStageapi59E549BD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:403:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "parent": "*",
+        "pathPart": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/apigw-rate-limits/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwapigwratelimitsF1047CE7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addUsagePlan in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:423:9)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/AwsCliLayer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientdeploymentAwsCliLayer923C9B69"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:501:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/Asset1/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/CustomResource-256MiB/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "clientdeploymentCustomResource256MiBE6E41C1A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:501:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/ServiceRole/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiBServiceRoleF991ED9F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/ServiceRole/DefaultPolicy": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "attachToRole": [
+          "*"
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addStatements": [
+          {}
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/LogGroup/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiBLogGroup2BF8D970"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/AwsCliLayer/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsdeploymentAwsCliLayerBCDAC646"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:534:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/Asset1/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/CustomResource-256MiB/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productcardsdeploymentCustomResource256MiBA4E88B69"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new BucketDeployment2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:534:5)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/rds-cluster/Secret/Attachment/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "rdsclusterSecretAttachment66DC0AAD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new DatabaseCluster2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:119:21)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/products-list-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "productslistlambdaServiceRoleDefaultPolicy15C6BC05"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:385:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-products-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postproductslambdaServiceRoleDefaultPolicy2C8DB1D8"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:386:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-customers-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getcustomerslambdaServiceRoleDefaultPolicy9D12BBAD"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:388:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-customers-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postcustomerslambdaServiceRoleDefaultPolicyEE538B71"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:389:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/get-orders-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "getorderslambdaServiceRoleDefaultPolicyFAFFC93D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:391:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-orders-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postorderslambdaServiceRoleDefaultPolicy2E4A0E3C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:392:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/post-users-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "postuserslambdaServiceRoleDefaultPolicy100CED17"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/login-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "loginlambdaServiceRoleDefaultPolicy7E887121"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/bootstrap-lambda/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "bootstraplambdaServiceRoleDefaultPolicy5A16CD95"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.grantDataApiAccess in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:393:13)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwOPTIONS4619C10E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new RestApi2 in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:403:17)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwhealthcheck8B55D260"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:431:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/GET": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproducts94277D93"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:436:34)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/GET": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/POST": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersEAA5B59E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:440:35)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/GET": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/POST": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigworders2FBB0764"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:444:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/GET": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/POST": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwusers984C7EF4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:449:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/POST": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwloginA2B09A93"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:452:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/OPTIONS": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": {
+          "authorizer": {
+            "authorizerId": "*",
+            "authorizationType": "*"
+          },
+          "apiKeyRequired": false,
+          "authorizationType": "*",
+          "methodResponses": [
+            {
+              "statusCode": "*",
+              "responseParameters": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addMethodResponse": [
+          {
+            "statusCode": "*",
+            "responseParameters": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/POST": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "resource": "*",
+        "httpMethod": "*",
+        "integration": "*",
+        "options": "*"
+      }
+    }
+  ],
+  "/thomas-bakehouse-stack/client-deployment/AwsCliLayer/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiB/ServiceRole/DefaultPolicy/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C256MiBServiceRoleDefaultPolicyE5468F0E"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/product-cards-deployment/AwsCliLayer/Code/AssetBucket": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": "*"
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwhealthcheckOPTIONSBED4EA85"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:431:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/GET/ApiPermission.thomasbakehousestackapigw36CAF5EA.GET..healthcheck": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwhealthcheckGETApiPermissionthomasbakehousestackapigw36CAF5EAGEThealthcheck6C5DCF10"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:431:41)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/GET/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.GET..healthcheck": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwhealthcheckGETApiPermissionTestthomasbakehousestackapigw36CAF5EAGEThealthcheckC6150F7A"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:431:41)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/healthcheck/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwhealthcheckGETE286C779"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:431:41)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsOPTIONS70CD17EC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:436:34)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/GET/ApiPermission.thomasbakehousestackapigw36CAF5EA.GET..products": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsGETApiPermissionthomasbakehousestackapigw36CAF5EAGETproductsACD40D9C"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:437:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/GET/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.GET..products": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsGETApiPermissionTestthomasbakehousestackapigw36CAF5EAGETproductsACFDD438"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:437:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsGET653B0EF3"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:437:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/POST/ApiPermission.thomasbakehousestackapigw36CAF5EA.POST..products": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsPOSTApiPermissionthomasbakehousestackapigw36CAF5EAPOSTproducts259D0015"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:438:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/POST/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.POST..products": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsPOSTApiPermissionTestthomasbakehousestackapigw36CAF5EAPOSTproducts4D101245"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:438:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/products/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwproductsPOSTDC096BBB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:438:17)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersOPTIONS61AED6A7"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:440:35)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/GET/ApiPermission.thomasbakehousestackapigw36CAF5EA.GET..customers": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersGETApiPermissionthomasbakehousestackapigw36CAF5EAGETcustomers4E813502"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:441:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/GET/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.GET..customers": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersGETApiPermissionTestthomasbakehousestackapigw36CAF5EAGETcustomersBBD6A56D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:441:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersGET6EBCCC63"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:441:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/POST/ApiPermission.thomasbakehousestackapigw36CAF5EA.POST..customers": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersPOSTApiPermissionthomasbakehousestackapigw36CAF5EAPOSTcustomers43929008"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:442:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/POST/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.POST..customers": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersPOSTApiPermissionTestthomasbakehousestackapigw36CAF5EAPOSTcustomersA3B6D8EC"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:442:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/customers/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwcustomersPOST7DB67851"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:442:18)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersOPTIONS0BD798D0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:444:32)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/GET/ApiPermission.thomasbakehousestackapigw36CAF5EA.GET..orders": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersGETApiPermissionthomasbakehousestackapigw36CAF5EAGETorders729489F4"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:445:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/GET/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.GET..orders": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersGETApiPermissionTestthomasbakehousestackapigw36CAF5EAGETorders47F711F0"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:445:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/GET/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersGETE35D70D1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:445:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/POST/ApiPermission.thomasbakehousestackapigw36CAF5EA.POST..orders": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersPOSTApiPermissionthomasbakehousestackapigw36CAF5EAPOSTordersEF795D68"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:446:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/POST/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.POST..orders": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersPOSTApiPermissionTestthomasbakehousestackapigw36CAF5EAPOSTordersEAE3B736"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:446:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/orders/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwordersPOST8E22071D"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:446:15)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwusersOPTIONSD8525DDB"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:449:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/POST/ApiPermission.thomasbakehousestackapigw36CAF5EA.POST..users": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwusersPOSTApiPermissionthomasbakehousestackapigw36CAF5EAPOSTusers1B40EF32"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:450:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/POST/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.POST..users": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwusersPOSTApiPermissionTestthomasbakehousestackapigw36CAF5EAPOSTusers6018DC59"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:450:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/users/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwusersPOSTC489DCB9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:450:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/OPTIONS/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwloginOPTIONS4BEEDECE"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...RootResource.addResource in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:452:31)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)"
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/POST/ApiPermission.thomasbakehousestackapigw36CAF5EA.POST..login": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwloginPOSTApiPermissionthomasbakehousestackapigw36CAF5EAPOSTlogin3E3E6E60"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:453:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/POST/ApiPermission.Test.thomasbakehousestackapigw36CAF5EA.POST..login": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwloginPOSTApiPermissionTestthomasbakehousestackapigw36CAF5EAPOSTlogin5F5B31A1"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:453:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/thomas-bakehouse-stack/apigw/Default/login/POST/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "apigwloginPOST5C7D0C2F"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...WrappedClass.addMethod in aws-cdk-lib...",
+        "new BakehouseStack (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:453:14)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:30 (:)",
+        "...node internals..."
+      ]
+    }
+  ]
+}
