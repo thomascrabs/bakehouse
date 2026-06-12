@@ -1,0 +1,92 @@
+{
+ "Resources": {
+  "githubactionsdeployroleF9C4A5C9": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRoleWithWebIdentity",
+       "Condition": {
+        "StringEquals": {
+         "token.actions.githubusercontent.com:aud": "sts.amazonaws.com"
+        },
+        "StringLike": {
+         "token.actions.githubusercontent.com:sub": "repo:thomascrabs/bakehouse:ref:refs/heads/main"
+        }
+       },
+       "Effect": "Allow",
+       "Principal": {
+        "Federated": "arn:aws:iam::024560517762:oidc-provider/token.actions.githubusercontent.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Assumed by GitHub Actions for thomascrabs/bakehouse",
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/AdministratorAccess"
+       ]
+      ]
+     }
+    ],
+    "MaxSessionDuration": 3600,
+    "RoleName": "github-actions-thomas-bakehouse"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Setup/github-actions-deploy-role/Resource"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WNy0oDQRBFvyW1lJ6WDARkdqPZKmGyDEHK6lIq6cfQNZ0Ymvl3iYrE1YXDOdzWtqsHu1zgWRtyx8bLm63bCeloBtZUMrHBs74KBluH5HlXISfPLxgYOrgDA6haArvHC3QVxiyRZETfE6USp3/Ote9pkhS/8WzAsVKW8Q8ZCPi5ZVVJcV0y3rgV0LlnjPjBbpO80AW6XYVwS/r8a+/nvXl6j9fDeTYxObYHvT+1K9va5eKgIk0ucZLAdvjZL9cADHgJAQAA"
+   },
+   "Metadata": {
+    "aws:cdk:path": "Setup/CDKMetadata/Default"
+   }
+  }
+ },
+ "Parameters": {
+  "BootstrapVersion": {
+   "Type": "AWS::SSM::Parameter::Value<String>",
+   "Default": "/cdk-bootstrap/hnb659fds/version",
+   "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+  }
+ },
+ "Rules": {
+  "CheckBootstrapVersion": {
+   "Assertions": [
+    {
+     "Assert": {
+      "Fn::Not": [
+       {
+        "Fn::Contains": [
+         [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+         ],
+         {
+          "Ref": "BootstrapVersion"
+         }
+        ]
+       }
+      ]
+     },
+     "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+    }
+   ]
+  }
+ }
+}

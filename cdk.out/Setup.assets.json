@@ -1,0 +1,21 @@
+{
+  "version": "54.0.0",
+  "files": {
+    "4447022d4d3a75870369d831166030962b9462a7e20ffbcd80db290048893312": {
+      "displayName": "thomas-bakehouse Template",
+      "source": {
+        "path": "Setup.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "024560517762-eu-west-2-40d47d07": {
+          "bucketName": "cdk-hnb659fds-assets-024560517762-eu-west-2",
+          "objectKey": "4447022d4d3a75870369d831166030962b9462a7e20ffbcd80db290048893312.json",
+          "region": "eu-west-2",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::024560517762:role/cdk-hnb659fds-file-publishing-role-024560517762-eu-west-2"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}

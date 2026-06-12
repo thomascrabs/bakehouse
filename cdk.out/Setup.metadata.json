@@ -1,0 +1,89 @@
+{
+  "/Setup": [
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:42 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/Setup/github-actions-deploy-role": [
+    {
+      "type": "aws:cdk:analytics:construct",
+      "data": {
+        "roleName": "*",
+        "assumedBy": {
+          "principalAccount": "*",
+          "assumeRoleAction": "*"
+        },
+        "description": "*",
+        "maxSessionDuration": "*"
+      }
+    },
+    {
+      "type": "aws:cdk:analytics:method",
+      "data": {
+        "addManagedPolicy": [
+          {
+            "managedPolicyArn": "*"
+          }
+        ]
+      }
+    }
+  ],
+  "/Setup/BootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "BootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/Setup/CheckBootstrapVersion": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CheckBootstrapVersion"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ],
+  "/Setup/github-actions-deploy-role/Resource": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "githubactionsdeployroleF9C4A5C9"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...new Role2 in aws-cdk-lib...",
+        "new Setup (file:///home/thomas/workspace/temp/bakehouse/lib/bakehouse-stack.js:69:37)",
+        "file:///home/thomas/workspace/temp/bakehouse/bin/bakehouse-app.js:42 (:)",
+        "...node internals..."
+      ]
+    }
+  ],
+  "/Setup/CDKMetadata/Default": [
+    {
+      "type": "aws:cdk:logicalId",
+      "data": "CDKMetadata"
+    },
+    {
+      "type": "aws:cdk:creationStack",
+      "data": [
+        "...aws-cdk-lib, node internals...",
+        "(no user code in 10 frames, use --stack-trace-limit to capture more)"
+      ]
+    }
+  ]
+}
