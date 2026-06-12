@@ -76,8 +76,8 @@ jobs:
 
       - name: bootstrap db
         run: |
-          aws lambda invoke --profile student --region eu-west-2 
-          --function-name bakehouse-thomascrabs-bootstrap-lambda 
+          aws lambda invoke --profile student --region eu-west-2 \
+          --function-name bakehouse-thomascrabs-bootstrap-lambda \
           --cli-binary-format raw-in-base64-out --payload "{}" output.json
 
   functional-test:
